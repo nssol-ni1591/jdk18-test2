@@ -1,0 +1,47 @@
+[Settings]
+等幅フォント:
+Preferences > General > Appearance > Colors and Fonts
+	Basic > Text Font = MS ゴシック 10
+	Basic > Text Font = RictyDiminished 11	※この場合、太文字設定は不要
+
+太文字:
+Preferences > C/C++ > Editor > Syntax Coloring : 
+	Code > Built-in Typed, Keywords, typedef > Bold <= false
+	Preprocessor > Directives > Bold <= false
+
+Preferences > C/C++ > Makefile Editor
+	Function, Keyword, Macro definition > Bold <= false
+
+タブサイズ（テキスト）: Makefile etc
+Preferences > General > Editors > Text Editors
+	Displayed tab width: <= 8
+
+Toolbox:
+Preferences > Run/Debug > Launching  > Luanch Bar
+	Enable the Lauch Bar <= false
+
+[Plugins]
+perl	=> EPIC: http://www.epic-ide.org/updates/testing
+python	=> PyDev
+bash	=> Bash Editor
+
+----
+比較時のスペースの扱い:
+Preferences > General > Compare/Patch
+	Ignore white space = true or false	※ご自由に
+
+
+キーバインディング（ショートカット）:
+General > Ktys
+[デフォルト]
+Forward		=> 
+Next Word	=> Ctrl + Right	: Editing Text
+Back		=> 		: in Dialog and Window
+Previous Word	=> Ctrl + Left	: Editing text
+×[1]
+Next Word	=> Right	: Editing Text
+Previous Word	=> Left		: Editing text
+[2]
+Scroll Line Down	=> Ctrl+Down 
+Scroll Line Up		=> Ctrl+Up
+
