@@ -1,0 +1,24 @@
+
+-w：警告を有効にする（より良いスクリプトを書く時には、基本お供で。use warnings;）
+-e：'スクリプト'： 実行するPerlスクリプトを指定（1行）
+-l：（入力から改行を取り除いたうえで最後に）出力結果を改行する。表示制御の目的で使われることが多い。
+  データ加工の際は使わないほうが安全（使うとしても最後の処理として）。
+-n：ファイルを読み込んで1行ずつ（whileで）処理する。行の内容は特殊変数$_に格納される。
+	perl -ne 'print $..": ".$_' rand.txt
+		$.：行番号
+	perl -wn -e 'print if /foo|shell/' sample.txt		grepの代わり
+
+-p：-nに加えて結果の$_をprintする。sed -eみたいなことをするときに使う。
+	perl -wp -e 's/shell/perl/g' sample.txt 
+-0777：入力を行ごとに区切らない。-pや-eと同時に用いられる。行ごとに変わるはずのない文字コード判別などの際に使う。
+	perl -MEncode::Guess -0777 -ne 'print guess_encoding($_, qw/shiftjis eucjp utf8/)->name' multibyte.txt
+
+-i ファイル名：ファイルの上書き
+-i拡張子 ファイル名：ファイルの上書き＆拡張子付きのバックアップファイル生成
+
+-a：Delimiter-separated valuesの処理。値は@Fに格納される
+-Fデリミタ：デリミタの指定（デフォルトの区切り文字はホワイトスペース）
+	perl -F, -lnae 'print $F[1]' log.txt
+
+cat 20200304.log | oerl -nle 'print $1 if /SNAPEND \[(.*)\]$/'
+
